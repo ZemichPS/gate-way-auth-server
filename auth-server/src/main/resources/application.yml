@@ -11,6 +11,10 @@ spring:
     url: jdbc:postgresql://localhost:5432/auth-server
   jpa:
     show-sql: true
+
 server:
   port: 8080
-
+  servlet:
+    session:
+      cookie:
+        same-site: lax

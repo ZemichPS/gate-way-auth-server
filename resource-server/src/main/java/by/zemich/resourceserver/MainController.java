@@ -18,7 +18,7 @@ public class MainController {
         this.accessService = access;
     }
 
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<String> getSecret() {
         return ResponseEntity.ok(accessService.getSecretCode());
     }

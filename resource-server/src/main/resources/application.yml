@@ -1,6 +1,5 @@
 server:
-  port: 0
-
+  port: 8090
 spring:
   security:
     oauth2:
