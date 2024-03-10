@@ -16,7 +16,7 @@ public class ResourceServerConfig {
         http.securityMatcher("/secret/**")
                 .authorizeHttpRequests(authorize -> authorize.anyRequest()
                         .hasAuthority("SCOPE_secret.know"))
-                      //  .hasRole("admin"))
+                       // .hasRole("user"))
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));
         return http.build();
     }
