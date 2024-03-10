@@ -1,31 +1,29 @@
 server:
   port: 8081
-  servlet:
-    session:
-      cookie:
-        same-site: lax
+
 
 spring:
   security:
     oauth2:
       client:
         registration:
-          spring:
-            provider: spring
-            client-id: oidc-client
-            client-secret: 1234
-            client-name: auth-client
-            client-authentication-method: client_secret_basic
-            authorization-grant-type:
-              - authorization_code
-              - password
-              - refresh_token
-            redirect-uri: http://127.0.0.1:8081/login/oauth2/code/oidc-client
+          gateway:
+            provider: keycloak
+            client-id: login-service
+            client-secret: UC1VmNHtpddjxVEiqEW8Q2gX8Uip1sYx
+            client-name: Users-application
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://localhost:8081/login/oauth2/code/{registrationId}"
             scope:
               - openid
-              - profile
-              - readSecret
-              - writeSecret
+              - secret.write
+              - secret.know
+              - secret.tell
         provider:
-          spring:
-            issuer-uri: http://localhost:8080
+          keycloak:
+            issuer-uri: "http://localhost:8282/realms/market"
+
+
+
+
+

@@ -20,6 +20,7 @@ public class MainController {
 
     @GetMapping()
     public ResponseEntity<String> getSecret() {
+        System.out.println("Secret");
         return ResponseEntity.ok(accessService.getSecretCode());
     }
 
