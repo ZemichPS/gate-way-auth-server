@@ -10,7 +10,7 @@ spring:
           gateway:
             provider: keycloak
             client-id: login-service
-            client-secret: UC1VmNHtpddjxVEiqEW8Q2gX8Uip1sYx
+            client-secret: lRvp7DOygVLOfSErbvBMx38YRxEZX4zf
             client-name: Users-application
             authorization-grant-type: authorization_code
             redirect-uri: "http://localhost:8081/login/oauth2/code/{registrationId}"
